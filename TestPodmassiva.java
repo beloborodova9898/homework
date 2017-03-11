@@ -17,7 +17,17 @@ public class TestPodmassiva {
             int [] otvetOtF1 = testoviy.recurrentSearch();
             int [] otvetOtF2 = testoviy.poiskVlob();
 
-            Assert.assertArrayEquals(otvetOtF1, otvetOtF2);
+            int summOtF1 = summPodmassiva(otvetOtF1);
+            int summOtF2 = summPodmassiva(otvetOtF2);
+
+            Assert.assertEquals(summOtF1, summOtF2);
         }
+    }
+
+    private int summPodmassiva (int [] massiv) {
+        int otvet =0;
+        for (int i=0; i<massiv.length; i++)
+            otvet+=massiv[i];
+        return otvet;
     }
 }
